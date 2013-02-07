@@ -1,8 +1,9 @@
 (ns infoagent.controllers.mpk
-  (:use [compojure.core :only (defroutes GET)]))
+  (:use [compojure.core :only (defroutes GET)])
+  (:require [infoagent.models.mpk :as model]))
 
 (defn get-mpk-status []
-  (str "Nothing wrong..."))
+  (model/all))
 
 (defroutes routes
   (GET "/mpk/" [] (get-mpk-status)))
